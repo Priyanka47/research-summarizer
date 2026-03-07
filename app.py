@@ -3,6 +3,7 @@ from google import genai
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 #client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -38,14 +39,10 @@ def initialize_agent():
                "climate change"), respond with a full structured summary using
                EXACTLY this format:
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                📌 OVERVIEW
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                ## 📌 OVERVIEW
                 3-4 sentences introducing the topic clearly.
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                🔑 KEY POINTS
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                ## 🔑 KEY POINTS
                 Exactly 5 key insights, each 2-3 sentences long.
                 • Point 1
                 • Point 2
@@ -53,19 +50,13 @@ def initialize_agent():
                 • Point 4
                 • Point 5
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                🌍 REAL WORLD APPLICATIONS
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                ## 🌍 REAL WORLD APPLICATIONS
                 3 concrete real-world examples with specific names or companies.
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                📚 EXPLORE FURTHER
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                ## 📚 EXPLORE FURTHER
                 3 subtopics to explore next, each with a one sentence explanation.
 
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                💡 TL;DR
-                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                ## 💡 TL;DR
                 One powerful sentence capturing the essence of the topic.
 
             2. If the user asks a FOLLOW-UP QUESTION answer naturally and
